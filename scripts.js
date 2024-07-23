@@ -1,6 +1,7 @@
 import { books, authors, genres, BOOKS_PER_PAGE } from './data.js';
 import './components/BookList.js'
-import './components/BookPreview.js'
+
+
 
 const library = {
     books,
@@ -71,7 +72,7 @@ function addEventListeners() {
         document.querySelector('[data-list-active]').open = false;
     });
 
-    document.querySelector('[data-settings-form]').addEventListener('submit', (event) => {
+   document.querySelector('[data-settings-form]').addEventListener('submit', (event) => {
         event.preventDefault();
         const formData = new FormData(event.target);
         const { theme } = Object.fromEntries(formData);
@@ -167,6 +168,7 @@ function addEventListeners() {
 function initialize() {
     const starting = document.createDocumentFragment();
     const bookList = document.createElement('book-list');
+    
     bookList.books = matches.slice(0, BOOKS_PER_PAGE);
     starting.appendChild(bookList);
     document.querySelector('[data-list-items]').appendChild(starting);

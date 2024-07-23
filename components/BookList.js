@@ -17,9 +17,7 @@ class BookList extends HTMLElement {
             bookPreview.data = book;
             fragment.appendChild(bookPreview);
         });
-        this.shadowRoot.innerHTML = `
-        
-            `;
+        this.shadowRoot.innerHTML = ``;
         this.shadowRoot.appendChild(fragment);
     }
 }
@@ -27,3 +25,4 @@ class BookList extends HTMLElement {
 customElements.define('book-list', BookList);
 
 export default BookList;
+
